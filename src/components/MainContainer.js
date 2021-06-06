@@ -10,14 +10,14 @@ function MainContainer() {
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
     .then(r => r.json())
-    .then(json => console.log(json))
+    .then(json => setStocks(json))
   }, []);
   return (
     <div>
       <SearchBar />
       <div className="row">
         <div className="col-8">
-          <StockContainer />
+          <StockContainer stocks={stocks}/>
         </div>
         <div className="col-4">
           <PortfolioContainer />
