@@ -7,8 +7,6 @@ function StockContainer({stocks}) {
     return stocks.map((stock,idx) => <Stock stock={stock} key={`stock-${idx}`}/>)
   }
 
-
-
   return (
     <div>
       <h2>Stocks</h2>

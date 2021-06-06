@@ -10,8 +10,18 @@ function MainContainer() {
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
     .then(r => r.json())
-    .then(json => setStocks(json))
-  }, []);
+    .then(json => {
+      const newStocks = transformStocks(json)
+      setStocks(newStocks)
+    })
+  }, [])
+
+  function transformStocks(stocks) {
+    return stocks.map(stock => {
+      return{...stock, inPortfolio: false}
+    })
+  }
+
   return (
     <div>
       <SearchBar />
