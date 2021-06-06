@@ -4,7 +4,9 @@ import Stock from "./Stock";
 function StockContainer({stocks}) {
 
   function populateStocks() {
-    return stocks.map((stock,idx) => <Stock stock={stock} key={`stock-${idx}`}/>)
+    return stocks.map((stock,idx) => (
+      <Stock stock={stock} key={`stock-${idx}`}/>
+    ));
   }
 
   return (

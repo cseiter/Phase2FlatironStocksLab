@@ -22,6 +22,14 @@ function MainContainer() {
     })
   }
 
+  function filterPortfolioStocks(stocks) {
+    if (stocks) {
+    return stocks.filter(stock => stock.inPortfolio)
+    }
+    return []
+
+  }
+
   return (
     <div>
       <SearchBar />
@@ -30,7 +38,7 @@ function MainContainer() {
           <StockContainer stocks={stocks}/>
         </div>
         <div className="col-4">
-          <PortfolioContainer />
+          <PortfolioContainer stocks={filterPortfolioStocks(stocks)} />
         </div>
       </div>
     </div>
