@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 
 function MainContainer() {
 
-  const [stocks, setStocks ] = useState(null)
+  const [stocks, setStocks] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
